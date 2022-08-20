@@ -1,0 +1,7 @@
+1、准备安装redis所需依赖（gcc、libstdc、devel等）
+2、下载redis压缩包并解压
+3、使用make&&make编译并检查
+4、修改redis.conf配置文件，设置集群配置文件cluster-config-file，将cluster-enabled 设置为yes，并设置cluster-node-timeout超时时间
+5、使用redis-server redis.conf启动单节点
+6、按4、5流程配置启动其他节点
+7、使用redis_cli --cluster create --cluster-replicas 1 ip1:port ip2:port ip3:port 创建集群
